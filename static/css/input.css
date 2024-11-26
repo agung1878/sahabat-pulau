@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*primary color*/
+.bg-cream {
+    background-color: #FFF2E1;
+}
+
+.bg-greenish {
+    background-color: #b9ffac;
+}
+
+.bg-blueish {
+    background-color: #8cd6ff;
+}
+
+
+/*font*/
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.bg-yellow-500 {
+    background-color: #F48C06;
+}
+.text-yellow-500 {
+    color: #F48C06;
+}
+.floating {
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+@keyframes floating {
+    0% { transform: translate(0, 0px); }
+    50% { transform: translate(0, 8px); }
+    100% { transform: translate(0, -0px); }
+}
+.floating-4 {
+    animation-name: floating;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+@keyframes floating-4 {
+    0% { transform: translate(0, 0px); }
+    50% { transform: translate(0, 8px); }
+    100% { transform: translate(0, -0px); }
+}
+.text-darken {
+    color: #2F327D;
+}
+
+.swiper-pagination-bullet {
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+    width: 12px;
+    height: 12px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: rgba(255, 255, 255, 1); /* Solid white for active bullet */
+    opacity: 1;
+  }
+
+  .swiper-pagination {
+    bottom: 10px; /* Position closer to the image */
+    z-index: 10;
+  }
+
+  /* Gallery Swiper */
+.gallery-swiper .swiper-pagination-bullet {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  .gallery-swiper .swiper-pagination-bullet-active {
+    background-color: rgba(255, 255, 255, 1);
+  }
+
+/* Marquee Container */
+.marquee-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100px;
+  }
+
+  /* Marquee */
+  .marquee {
+    width: 100%;
+    height: 10rem;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .marquee__inner-wrap {
+    height: 100%;
+    width: 100%;
+  }
+
+  .marquee.reverse {
+    animation-direction: reverse;
+  }
+
+  .marquee__img {
+    width: max(8rem, 12vw);
+    height: 8rem;
+    margin: 0 1vw;
+    border-radius: 100rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #444;
+    filter: grayscale(0.6);
+  }
+
+  .marquee__inner {
+    height: 100%;
+    width: fit-content;
+    align-items: center;
+    display: flex;
+    position: relative;
+    animation: marquee 50s linear infinite;
+    will-change: transform;
+  }
+
+  .marquee__inner_reverse {
+    height: 100%;
+    width: fit-content;
+    align-items: center;
+    display: flex;
+    position: relative;
+    animation: marquee 50s linear infinite;
+    will-change: transform;
+    animation-direction: reverse;
+  }
+
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }

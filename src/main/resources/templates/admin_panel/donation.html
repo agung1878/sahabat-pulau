@@ -1,0 +1,131 @@
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{layout-admin}" th:with="activeTitle='Donation',activeTab='DONATION'">
+<head>
+    <div layout:fragment="customCss">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    </div>
+</head>
+<body>
+<div layout:fragment="content">
+
+    <div class="card">
+        <div class="card-body">
+            <h2 class="font-bold text-lg mb-4">Filters</h2>
+            <form th:action="@{/admin_panel/donation}" th:object="${params}" class="">
+                <div class="flex gap-3 mb-4">
+                    <div class="w-full relative">
+                        <label class="flex  items-center mb-2 text-gray-600 text-sm font-medium">Date</label>
+                        <input type="text" name="dateRange" th:field="*{dateRange}" readonly class="block w-full h-11 px-5 py-2.5 bg-white leading-7 text-base font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-full placeholder-gray-400 focus:outline-none" placeholder="dd-MM-yyyy - dd-MM-yyyy">
+                    </div>
+                    <div class="w-full relative">
+                        <label class="flex  items-center mb-2 text-gray-600 text-sm font-medium">Name</label>
+                        <input type="text" th:field="*{name}" id="default-search" class="block w-full h-11 px-5 py-2.5 bg-white leading-7 text-base font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-full placeholder-gray-400 focus:outline-none " placeholder="">
+                    </div>
+                </div>
+                <div class="relative mb-6">
+                    <label class="flex  items-center mb-2 text-gray-600 text-sm font-medium">Email Address</label>
+                    <input type="text" th:field="*{email}" id="default-search" class="block w-full h-11 px-5 py-2.5 bg-white leading-7 text-base font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-full placeholder-gray-400 focus:outline-none " placeholder="">
+                </div>
+                <div class="flex justify-end">
+                    <button class="h-12 w-40 shadow-sm rounded-full bg-indigo-600 hover:bg-indigo-800 transition-all duration-700 text-white text-base font-semibold leading-7" type="submit">Search</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <br>
+
+    <div class="card">
+        <div class="card-body">
+            <h2 class="font-bold text-lg mb-10">Recent Donations</h2>
+
+            <!-- start a table -->
+            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        Date
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Name
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Email
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Phone Number
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Bank
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Bank A Account Name
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Bank A Account Number
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Image Receipt
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700"
+                th:each="data : ${datas}">
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white" th:text="${#temporals.format(data.createdAt,'dd-MM-yyyy')}">
+                        Apple MacBook Pro 17"
+                    </th>
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white" th:text="${data.name}">
+                        Apple MacBook Pro 17"
+                    </th>
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white" th:text="${data.email}">
+                        Apple MacBook Pro 17"
+                    </th>
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white" th:text="${data.phoneNumber}">
+                        Apple MacBook Pro 17"
+                    </th>
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white" th:text="${data.bankName}">
+                        Apple MacBook Pro 17"
+                    </th>
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white" th:text="${data.bankAccountName}">
+                        Apple MacBook Pro 17"
+                    </th>
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white" th:text="${data.bankAccountNumber}">
+                        Apple MacBook Pro 17"
+                    </th>
+                    <td class="px-6 py-4">
+                        <a th:href="@{/file/uploaded/{cId}/{fileName}(cId=${data.id},fileName=${data.getReceiptImgUrl()})}"
+                           th:text="${data.getReceiptImgFilename()}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline" target="_blank">View</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <!-- end a table -->
+        </div>
+
+    </div>
+
+</div>
+
+
+</div>
+<div layout:fragment="customScript">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
+    <script>
+        $(function() {
+            $('input[name="dateRange"]').daterangepicker({
+                opens: 'left'
+            }, function(start, end, label) {
+                console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+            });
+        });
+    </script>
+</div>
+</body>
+</html>

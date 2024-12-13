@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahabat Pulau</title>
+    <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.12.1/css/pro.min.css">
+
+    <!-- Custom style -->
+    <link rel="stylesheet" th:href="@{/css/admin.css}"/>
+
+    <script defer src="https://unpkg.com/alpinejs@3.7.0/dist/cdn.min.js"></script>
+
+
+    <div layout:fragment="customCss" th:remove="tag"></div>
+</head>
+
+<body>
+
+<div th:include="fragments/navbar-admin :: navbar-admin" th:remove="tag">Navbar Admin</div>
+<!-- strat wrapper -->
+<div class="h-screen flex flex-row flex-wrap">
+
+    <div th:include="fragments/sidebar-admin :: sidebar-admin" th:remove="tag">Sidebar Admin</div>
+
+
+        <!-- strat content -->
+        <div class="bg-gray-100 flex-1 p-6 md:mt-16">
+            <div layout:fragment="content" th:remove="tag"></div>
+        </div>
+
+
+</div>
+<!-- end wrapper -->
+
+<footer class="rounded-xl mt-8 border border-[--ui-light-border-color] dark:border-[--ui-dark-border-color]">
+    <div class="flex items-center justify-center rounded-md bg-gray-100 px-6 py-3 dark:bg-gray-900">
+        <span class="text-gray-600 dark:text-gray-400">&copy; Sahabat Pulau 2024 - Present</span>
+    </div>
+</footer>
+<div layout:fragment="customScript" th:remove="tag"></div>
+
+<!-- AOS init -->
+<script>
+    var navbarToggle = document.getElementById('navbarToggle'),
+        navbar       = document.getElementById('navbar');
+
+
+
+    navbarToggle.addEventListener('click' , function(){
+
+        if (navbar.classList.contains('md:hidden')) {
+            navbar.classList.remove('md:hidden');
+            navbar.classList.add('fadeIn');
+        }else{
+            var _classRemover =  function () {
+                navbar.classList.remove('fadeIn');
+                navbar.classList.add('fadeOut');
+                console.log('removed');
+
+            };
+
+            var animate = async function(){
+                await _classRemover();
+                console.log('animated');
+
+                setTimeout(function(){
+                    navbar.classList.add('md:hidden');
+                    navbar.classList.remove('fadeOut');
+                }, 450);
+            };
+
+            animate();
+        };
+
+    });
+
+    // work with sidebar
+    var btn     = document.getElementById('sliderBtn'),
+        sideBar = document.getElementById('sideBar'),
+        sideBarHideBtn = document.getElementById('sideBarHideBtn');
+
+    // show sidebar
+    btn.addEventListener('click' , function(){
+        if (sideBar.classList.contains('md:-ml-64')) {
+            sideBar.classList.replace('md:-ml-64' , 'md:ml-0');
+            sideBar.classList.remove('md:slideOutLeft');
+            sideBar.classList.add('md:slideInLeft');
+        };
+    });
+
+    // hide sideBar
+    sideBarHideBtn.addEventListener('click' , function(){
+        if (sideBar.classList.contains('md:ml-0' , 'slideInLeft')) {
+            var _class = function(){
+                sideBar.classList.remove('md:slideInLeft');
+                sideBar.classList.add('md:slideOutLeft');
+
+                console.log('hide');
+            };
+            var animate = async function(){
+                await _class();
+
+                setTimeout(function(){
+                    sideBar.classList.replace('md:ml-0' , 'md:-ml-64');
+                    console.log('animated');
+                } , 300);
+
+            };
+
+            _class();
+            animate();
+        };
+    });
+    // end with sidebar
+
+</script>
+</body>
+
+</html>

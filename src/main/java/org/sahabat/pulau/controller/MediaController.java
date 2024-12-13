@@ -1,0 +1,16 @@
+package org.sahabat.pulau.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/media")
+public class MediaController {
+
+    @GetMapping
+    public String media() {
+        return "media";
+    }
+
+}

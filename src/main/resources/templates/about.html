@@ -1,0 +1,183 @@
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{layout}" th:with="activeTitle='About',activeTab='ABOUT'">
+<head>
+    <div layout:fragment="customCss">
+    </div>
+</head>
+<body>
+<div layout:fragment="content">
+
+    <!-- Hero Section -->
+    <section class="py-16 mt-28">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-extrabold text-gray-800">Who We Are</h2>
+            <p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
+                We are driven by a passion for excellence, creating impactful solutions, and inspiring meaningful change.
+            </p>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section id="mission" class="py-16">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h3 class="text-3xl font-semibold text-gray-800">Our Mission</h3>
+                <p class="mt-4 text-gray-600 leading-relaxed">
+                    At our core, we strive to build a future where technology and innovation empower individuals and
+                    communities to thrive.
+                </p>
+            </div>
+            <div>
+                <img src="https://via.placeholder.com/500x300" alt="Our Mission" class="rounded-lg shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Slider Section -->
+    <!-- Gallery Section -->
+    <section id="gallery" class="bg-gray-100 py-16">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-center text-gray-800 mb-8">Our Gallery</h3>
+            <div class="swiper gallery-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="https://via.placeholder.com/600x400" alt="Gallery Image 1"
+                             class="rounded-lg shadow-lg mx-auto">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://via.placeholder.com/600x400" alt="Gallery Image 2"
+                             class="rounded-lg shadow-lg mx-auto">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://via.placeholder.com/600x400" alt="Gallery Image 3"
+                             class="rounded-lg shadow-lg mx-auto">
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section id="partners" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-center text-gray-800 mb-8">Donors and Partners</h3>
+            <!-- Marquee 1 -->
+            <div class="marquee">
+                <div class="marquee__inner-wrap">
+                    <div class="marquee__inner">
+                        <div class="marquee__img">
+                            <img src="/img/nike-logo.png"/>
+                        </div>
+                        <div class="marquee__img"
+                             style="background-image: url(https://images.unsplash.com/photo-1589656966895-2f33e7653819?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80)">
+                        </div>
+                        <div class="marquee__img"
+                             style="background-image: url(https://images.unsplash.com/photo-1604429868519-8a64cb3b010b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80)">
+                        </div>
+                        <div class="marquee__img"
+                             style="background-image: url(https://images.unsplash.com/photo-1534681534056-461f50de526f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80)">
+                        </div>
+                        <div aria-hidden="true" class="marquee__img"
+                             style="background-image: url(https://images.unsplash.com/photo-1525382455947-f319bc05fb35?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80)">
+                        </div>
+                        <div aria-hidden="true" class="marquee__img"
+                             style="background-image: url(https://images.unsplash.com/photo-1589656966895-2f33e7653819?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80)">
+                        </div>
+                        <div aria-hidden="true" class="marquee__img"
+                             style="background-image: url(https://images.unsplash.com/photo-1604429868519-8a64cb3b010b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80)">
+                        </div>
+                        <div aria-hidden="true" class="marquee__img"
+                             style="background-image: url(https://images.unsplash.com/photo-1534681534056-461f50de526f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="marquee">
+                <div class="marquee__inner-wrap">
+                    <div class="marquee__inner_reverse" direction="right">
+                        <div class="marquee__img"
+                             style="background-image: url(https://images.unsplash.com/photo-1525382455947-f319bc05fb35?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80)">
+                        </div>
+                        <div class="marquee__img"
+                             style="background-image: url(https://images.unsplash.com/photo-1589656966895-2f33e7653819?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80)">
+                        </div>
+                        <div class="marquee__img"
+                             style="background-image: url(https://images.unsplash.com/photo-1604429868519-8a64cb3b010b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80)">
+                        </div>
+                        <div class="marquee__img"
+                             style="background-image: url(https://images.unsplash.com/photo-1534681534056-461f50de526f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80)">
+                        </div>
+                        <div aria-hidden="true" class="marquee__img"
+                             style="background-image: url(https://images.unsplash.com/photo-1525382455947-f319bc05fb35?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80)">
+                        </div>
+                        <div aria-hidden="true" class="marquee__img"
+                             style="background-image: url(https://images.unsplash.com/photo-1589656966895-2f33e7653819?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80)">
+                        </div>
+                        <div aria-hidden="true" class="marquee__img"
+                             style="background-image: url(https://images.unsplash.com/photo-1604429868519-8a64cb3b010b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80)">
+                        </div>
+                        <div aria-hidden="true" class="marquee__img"
+                             style="background-image: url(https://images.unsplash.com/photo-1534681534056-461f50de526f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="marquee">
+                <div class="marquee__inner-wrap">
+                    <div class="marquee__inner" direction="right">
+                        <div class="marquee__img"
+                             style="background-image: url(https://images.unsplash.com/photo-1525382455947-f319bc05fb35?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80)">
+                        </div>
+                        <div class="marquee__img"
+                             style="background-image: url(https://images.unsplash.com/photo-1589656966895-2f33e7653819?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80)">
+                        </div>
+                        <div class="marquee__img"
+                             style="background-image: url(https://images.unsplash.com/photo-1604429868519-8a64cb3b010b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80)">
+                        </div>
+                        <div class="marquee__img"
+                             style="background-image: url(https://images.unsplash.com/photo-1534681534056-461f50de526f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80)">
+                        </div>
+                        <div aria-hidden="true" class="marquee__img"
+                             style="background-image: url(https://images.unsplash.com/photo-1525382455947-f319bc05fb35?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80)">
+                        </div>
+                        <div aria-hidden="true" class="marquee__img"
+                             style="background-image: url(https://images.unsplash.com/photo-1589656966895-2f33e7653819?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80)">
+                        </div>
+                        <div aria-hidden="true" class="marquee__img"
+                             style="background-image: url(https://images.unsplash.com/photo-1604429868519-8a64cb3b010b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80)">
+                        </div>
+                        <div aria-hidden="true" class="marquee__img"
+                             style="background-image: url(https://images.unsplash.com/photo-1534681534056-461f50de526f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</div>
+<div layout:fragment="customScript">
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+        // Initialize Swiper
+        const gallerySwiper = new Swiper('.gallery-swiper', {
+            loop: true,
+            autoplay: {
+                delay: 3000, // Auto-slide every 3 seconds
+                disableOnInteraction: false,
+            },
+            speed: 1000, // Smooth transition speed
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+package org.sahabat.pulau.spesification;
+
+public enum SpecificationOperation {
+    LIKE,
+    EQUAL,
+    INT_GREATER_THAN,
+    INT_LESS_THAN,
+    DATE_GREATER_THAN,
+    DATE_LESS_THAN,
+    DATE_GREATER_THAN_EQUAL,
+    DATE_LESS_THAN_EQUAL,
+    LOCAL_DATE_GREATER_THAN,
+    LOCAL_DATE_LESS_THAN,
+    LOCAL_DATE_REVERSE_BETWEEN,
+    EQUAL_OR_NULL,
+    IS_NULL,
+    NOT_NULL,
+    NOT_EQUAL,
+    BETWEEN,
+    LOCAL_DATE_BETWEEN,
+    LOCAL_DATE_TIME_BETWEEN,
+    IN,
+    NOT_IN,
+    MONTH,
+    YEAR,
+    EQUAL_DATE,
+    DAY_MONTH_YEAR,
+    MONTH_YEAR,
+    QUARTERLY_YEAR,
+    LAST_30_DAYS,
+    LAST_6_MONTH,
+    DATE_DAY_MONTH_YEAR
+}
